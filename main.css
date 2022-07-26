@@ -23,7 +23,7 @@
   color: #ecf0f1 !important;
 }
 
-.bg-danger {
+.bg-error {
   background-color: #c0392b !important;
   color: #ecf0f1 !important;
 }
@@ -58,7 +58,7 @@
   color: #8e44ad !important;
 }
 
-.danger {
+.error {
   color: #c0392b !important;
 }
 
@@ -160,7 +160,7 @@
   transition: 0.2s ease-in-out;
 }
 
-.btn-danger {
+.btn-error {
   text-decoration: none;
   font-family: sans-serif;
   font-size: 1rem;
@@ -301,7 +301,7 @@
   filter: brightness(0.83);
 }
 
-.btn-danger:hover {
+.btn-error:hover {
   text-decoration: none;
   font-family: sans-serif;
   font-size: 1rem;
@@ -451,7 +451,7 @@
   box-shadow: 0 0 0 0.2rem rgba(142, 68, 173, 0.5);
 }
 
-.btn-danger:focus {
+.btn-error:focus {
   text-decoration: none;
   font-family: sans-serif;
   font-size: 1rem;
@@ -500,6 +500,4 @@
   transition: 0.2s ease-in-out;
   filter: brightness(0.93);
   box-shadow: 0 0 0 0.2rem rgba(39, 174, 96, 0.5);
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

@@ -5,18 +5,16 @@ $dark: #2c3e50;
 $success: #27ae60;
 $info: #3498db;
 $warning: #f1c40f;
-$danger: #c0392b;
+$error: #c0392b;
 
-@mixin bg($bg: $primary, $color: $light) {
-    background-color: $bg !important;
-    color: $color !important;
-}
+@mixin bg($bg: $primary, $color: $light) {background-color: $bg !important;color: $color !important;}
+
 .bg-info {@include bg($bg: $info);}
 .bg-dark {@include bg($bg: $dark);}
 .bg-secondary {@include bg($bg: $secondary);}
 .bg-light {@include bg($bg: $light, $color: $dark);}
 .bg-primary {@include bg($bg: $primary);}
-.bg-danger {@include bg($bg: $danger);}
+.bg-error {@include bg($bg: $error);}
 .bg-warning {@include bg($bg: $warning, $color: $dark);}
 .bg-success {@include bg($bg: $success);}
 
@@ -28,7 +26,7 @@ $danger: #c0392b;
 .secondary {@include text($secondary);}
 .light {@include text($light);}
 .primary {@include text($primary);}
-.danger {@include text($danger);}
+.error {@include text($error);}
 .warning {@include text($warning);}
 .success {@include text($success);}
 
@@ -46,22 +44,17 @@ $danger: #c0392b;
     box-sizing: border-box;
     transition: .2s ease-in-out;
 }
-@mixin btn-hover($bg: transparent, $color: $light) {
-    @include btn($bg, $color);
-    filter: brightness(0.83);
-}
-@mixin btn-focus($bg: transparent, $color: $light) {
-    @include btn($bg, $color);
-    filter: brightness(0.93);
-    box-shadow: 0 0 0 .2rem rgba($bg, .5);
-}
+
+@mixin btn-hover($bg: transparent, $color: $light) {@include btn($bg, $color);filter: brightness(0.83);}
+@mixin btn-focus($bg: transparent, $color: $light) {@include btn($bg, $color);filter: brightness(0.93);box-shadow: 0 0 0 .2rem rgba($bg, .5);}
+
 .btn {@include btn;}
 .btn-info {@include btn($bg: $info);}
 .btn-secondary {@include btn($bg: $secondary);}
 .btn-dark {@include btn($bg: $dark);}
 .btn-light {@include btn($bg: $light, $color: $dark);}
 .btn-primary {@include btn($bg: $primary);}
-.btn-danger {@include btn($bg: $danger);}
+.btn-error {@include btn($bg: $error);}
 .btn-warning {@include btn($bg: $warning, $color: $dark);}
 .btn-success {@include btn($bg: $success);}
 
@@ -71,7 +64,7 @@ $danger: #c0392b;
 .btn-dark:hover {@include btn-hover($bg: $dark, $color: $light);}
 .btn-light:hover {@include btn-hover($bg: $light, $color: $dark);}
 .btn-primary:hover {@include btn-hover($bg: $primary);}
-.btn-danger:hover {@include btn-hover($bg: $danger);}
+.btn-error:hover {@include btn-hover($bg: $error);}
 .btn-warning:hover {@include btn-hover($bg: $warning, $color: $dark);}
 .btn-success:hover {@include btn-hover($bg: $success);}
 
@@ -81,6 +74,6 @@ $danger: #c0392b;
 .btn-dark:focus {@include btn-focus($bg: $dark, $color: $light);}
 .btn-light:focus {@include btn-focus($bg: $light, $color: $dark);}
 .btn-primary:focus {@include btn-focus($bg: $primary);}
-.btn-danger:focus {@include btn-focus($bg: $danger);}
+.btn-error:focus {@include btn-focus($bg: $error);}
 .btn-warning:focus {@include btn-focus($bg: $warning, $color: $dark);}
 .btn-success:focus {@include btn-focus($bg: $success);}
