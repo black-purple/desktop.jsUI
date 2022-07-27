@@ -1,0 +1,24 @@
+$primary: #8e44ad;
+$secondary: #95a5a6;
+$light: #ecf0f1;
+$dark: #2c3e50;
+$success: #27ae60;
+$info: #3498db;
+$warning: #f1c40f;
+$error: #c0392b;
+
+$colors: (
+    primary: $primary,
+    secondary: $secondary,
+    light: $light,
+    dark: $dark,
+    success: $success,
+    info: $info,
+    warning: $warning,
+    error: $error,
+);
+
+$base-font-size: 1rem; 
+$base-border-radius : .2rem;
+$base-padding-y: .25rem;
+$base-padding-x: .75rem;

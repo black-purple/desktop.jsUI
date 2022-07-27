@@ -1,0 +1,38 @@
+@import "../vars";
+
+@mixin btn($bg: $light, $color: $light) {
+    text-decoration: none;
+    user-select: none;
+    font-family: sans-serif;
+    font-size: 1rem;
+    background: $bg;
+    box-shadow: 0 0 10rem .2rem rgba($light, 35);
+    color: $color;
+    border: none;
+    border-radius: $base-border-radius;
+    padding: $base-padding-y $base-padding-x;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: .2s ease;
+}
+
+@mixin btn-hover($bg: $dark, $color: $light) {@include btn($bg, $color);filter: brightness(0.83);}
+@mixin btn-focus($bg: $dark, $color: $light) {@include btn($bg, $color);filter: brightness(0.93);box-shadow: 0 0 0 .2rem rgba($bg, .4);}
+
+@each $k, $v in $colors {
+    @if ($v != $warning and $v != $light) {
+        .btn-#{$k} {@include btn($bg: $v)}
+        .btn-#{$k}:hover {@include btn-hover($bg: $v)}
+        .btn-#{$k}:focus {@include btn-focus($bg: $v)}
+    } @else {
+        .btn-#{$k} {@include btn($bg: $v, $color: $dark)}
+        .btn-#{$k}:hover {@include btn-hover($bg: $v, $color: $dark)}
+        .btn-#{$k}:focus {@include btn-focus($bg: $v, $color: $dark)}
+    }
+}
+
+.btn {@include btn;}
+
+.btn:hover {@include btn-hover;}
+
+.btn:focus {@include btn-focus;}
