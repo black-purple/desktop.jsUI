@@ -3,12 +3,11 @@
 @import "vars";
 
 *{
-    padding: $base-padding-y $base-padding-x;
+    padding: 0;
     margin: 0;
     color: $dark;
     font-size: $base-font-size;
-}
-
-a {
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
+    box-sizing: border-box;
 }

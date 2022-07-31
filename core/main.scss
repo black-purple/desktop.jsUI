@@ -1,16 +1,80 @@
-@import "vars";
-@import "base";  
-@import "./components/button";  
-
+@use "sass:math";
+@import "./src/vars";
+@import "./src/base";  
+@import "./src/components/button";
+@import "./src/components/window";
 
 @mixin bg($bg: $primary, $color: $light) {background-color: $bg !important;color: $color !important;}
 @mixin text($color: $dark) {color: $color !important;background-color: none;padding: 0 !important;margin: 0 !important;}
+@mixin border($color: $dark, $thickness: $base-border-width, $type: solid) {border: $thickness $type $color !important;}
+@mixin rounded($val: $base-border-radius) {border-radius: $val !important;}
 
 @each $k, $v in $colors {
+    // Generating background color utility classes
     @if ($v != $warning and $v != $light) {
         .bg-#{$k} {@include bg($bg: $v)}
     } @else {
         .bg-#{$k} {@include bg($bg: $v, $color: $dark)}
     }
-    .#{$k} {@include text($v)}
+
+    // Generating font color utility classes (with light and dark variants)
+    @for $i from 1 to 5 {
+        .text-#{$k}-l#{$i} {@include text($color: mix($light, $v, $i * 10))}
+        .text-#{$k}-d#{$i} {@include text($color: mix($dark, $v, $i * 10))}
+        @if ($v != $warning and $v != $light) {
+            .bg-#{$k}-l#{$i} {@include bg($bg: mix($light, $v, $i * 10))}
+            .bg-#{$k}-d#{$i} {@include bg($bg: mix($dark, $v, $i * 10))}
+        } @else {
+            .bg-#{$k}-l#{$i} {@include bg($bg: mix($light, $v, $i * 10), $color: $dark)}
+            .bg-#{$k}-d#{$i} {@include bg($bg: mix($dark, $v, $i * 10), $color: $dark)}
+        }
+    
+    }
+    .text-#{$k} {@include text($v)}
+
+}
+
+// Generating padding and margn utility classes with all variants
+
+.p0 {padding: 0;}
+.m0 {margin: 0;}
+.px0 {padding-inline: 0;}
+.mx0 {margin-inline: 0;}
+.py0 {padding-block: 0;}
+.my0 {padding-block: 0;}
+
+@for $i from 0 to 6 {
+    .p#{$i} {padding: ($base-p-y * $i) ($base-p-x * $i) !important;}
+
+    .m#{$i} {margin: ($base-m-y * $i) ($base-m-x * $i) !important;}
+
+    .px#{$i} {padding-inline: $base-p-x * $i !important;}
+    .py#{$i} {padding-block: $base-p-y * $i !important;}
+
+    .mx#{$i} {margin-inline: $base-m-x * $i !important;}
+    .my#{$i} {margin-block: $base-m-y * $i !important;}
+
+    .ml#{$i} {margin-left: math.div($base-m-x, 2);}
+    .mr#{$i} {margin-right: math.div($base-m-x, 2);}
+    .mt#{$i} {margin-top: math.div($base-m-x, 2);}
+    .mb#{$i} {margin-bottom: math.div($base-m-x, 2);}
+
+    .pl#{$i} {padding-left: math.div($base-p-x, 2);}
+    .pr#{$i} {padding-right: math.div($base-p-x, 2);}
+    .pt#{$i} {padding-top: math.div($base-p-x, 2);}
+    .pb#{$i} {padding-bottom: math.div($base-p-x, 2);}
+}
+
+// generating border utility classes ( border-radius, border width and color)
+
+    .rounded-pill {@include rounded($val: 50rem);}
+    .rounded-circle {@include rounded($val: 50%); @supports (aspect-ratio: 1) {aspect-ratio: 1;}}
+
+    .rounded0 {@include rounded($val: 0);}
+    .rounded1 {@include rounded($val: $base-border-radius);}
+
+    .border0 {border: none;}
+    .border1 {@include border($thickness: $base-border-width);}
+@for $i from 1 to 6 {
+    .rounded#{$i} {@include rounded($val: $base-border-radius * math.div($i, 2));}
 }

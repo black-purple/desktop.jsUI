@@ -1,23 +1,24 @@
 @import "../vars";
 
-@mixin btn($bg: $light, $color: $light) {
+@mixin btn($bg: $primary, $color: $light) {
     text-decoration: none;
     user-select: none;
     font-family: sans-serif;
-    font-size: 1rem;
-    background: $bg;
+    font-size: $base-font-size;
+    background-color: $bg;
     box-shadow: 0 0 10rem .2rem rgba($light, 35);
     color: $color;
     border: none;
+    outline: 0 solid transparent;
     border-radius: $base-border-radius;
-    padding: $base-padding-y $base-padding-x;
+    padding: $base-p-y * 2  $base-p-x * 2;
     cursor: pointer;
-    box-sizing: border-box;
-    transition: .2s ease;
+    transition: .15s ease;
+    margin: none;
 }
 
 @mixin btn-hover($bg: $dark, $color: $light) {@include btn($bg, $color);filter: brightness(0.83);}
-@mixin btn-focus($bg: $dark, $color: $light) {@include btn($bg, $color);filter: brightness(0.93);box-shadow: 0 0 0 .2rem rgba($bg, .4);}
+@mixin btn-focus($bg: $dark, $color: $light) {@include btn($bg, $color);filter: brightness(0.93);outline: 0.25em solid rgba($bg, .4);}
 
 @each $k, $v in $colors {
     @if ($v != $warning and $v != $light) {
