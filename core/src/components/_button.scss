@@ -1,6 +1,8 @@
-@import "../vars";
+@import "../env/vars";
 
 @mixin btn($bg: $primary, $color: $light) {
+    position: relative;
+    overflow: hidden;
     text-decoration: none;
     user-select: none;
     font-family: sans-serif;
@@ -11,29 +13,77 @@
     border: none;
     outline: 0 solid transparent;
     border-radius: $base-border-radius;
-    padding: $base-p-y * 2  $base-p-x * 2;
+    padding: $base-p-y * 2 $base-p-x * 2;
     cursor: pointer;
     transition: .15s ease;
     margin: none;
+
+    span.ripple {
+        position: absolute;
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple 600ms linear;
+        background-color: rgba(255, 255, 255, 0.256);
+    }
+
+    @keyframes ripple {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+
 }
 
-@mixin btn-hover($bg: $dark, $color: $light) {@include btn($bg, $color);filter: brightness(0.83);}
-@mixin btn-focus($bg: $dark, $color: $light) {@include btn($bg, $color);filter: brightness(0.93);outline: 0.25em solid rgba($bg, .4);}
+@mixin btn-hover($bg: $dark, $color: $light) {
+    @include btn($bg, $color);
+    filter: brightness(0.83);
+}
 
-@each $k, $v in $colors {
-    @if ($v != $warning and $v != $light) {
-        .btn-#{$k} {@include btn($bg: $v)}
-        .btn-#{$k}:hover {@include btn-hover($bg: $v)}
-        .btn-#{$k}:focus {@include btn-focus($bg: $v)}
-    } @else {
-        .btn-#{$k} {@include btn($bg: $v, $color: $dark)}
-        .btn-#{$k}:hover {@include btn-hover($bg: $v, $color: $dark)}
-        .btn-#{$k}:focus {@include btn-focus($bg: $v, $color: $dark)}
+@mixin btn-focus($bg: $dark, $color: $light) {
+    @include btn($bg, $color);
+    filter: brightness(0.93);
+    outline: 0.25em solid rgba($bg, .4);
+}
+
+@each $k,$v in $colors {
+    @if ($v  !=$warning and $v  !=$light) {
+        .btn-#{$k} {
+            @include btn($bg: $v)
+        }
+
+        .btn-#{$k}:hover {
+            @include btn-hover($bg: $v)
+        }
+
+        .btn-#{$k}:focus {
+            @include btn-focus($bg: $v)
+        }
+    }
+
+    @else {
+        .btn-#{$k} {
+            @include btn($bg: $v, $color: $dark)
+        }
+
+        .btn-#{$k}:hover {
+            @include btn-hover($bg: $v, $color: $dark)
+        }
+
+        .btn-#{$k}:focus {
+            @include btn-focus($bg: $v, $color: $dark)
+        }
     }
 }
 
-.btn {@include btn;}
+.btn {
+    @include btn;
+}
 
-.btn:hover {@include btn-hover;}
+.btn:hover {
+    @include btn-hover;
+}
 
-.btn:focus {@include btn-focus;}
+.btn:focus {
+    @include btn-focus;
+}

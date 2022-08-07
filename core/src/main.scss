@@ -1,8 +1,9 @@
 @use "sass:math";
-@import "./src/vars";
-@import "./src/base";  
-@import "./src/components/button";
-@import "./src/components/window";
+@import "./env/base";
+@import "./env/vars";
+@import "./components/button";
+@import "./components/window";
+@import "./components/input";
 
 @mixin bg($bg: $primary, $color: $light) {background-color: $bg !important;color: $color !important;}
 @mixin text($color: $dark) {color: $color !important;background-color: none;padding: 0 !important;margin: 0 !important;}
@@ -28,10 +29,11 @@
             .bg-#{$k}-l#{$i} {@include bg($bg: mix($light, $v, $i * 10), $color: $dark)}
             .bg-#{$k}-d#{$i} {@include bg($bg: mix($dark, $v, $i * 10), $color: $dark)}
         }
-    
+        
+        .border-#{$k}#{$i} {@include border($color: $v, $thickness: math.div($base-border-width, 2) * $i);}
     }
-    .text-#{$k} {@include text($v)}
-
+    .text-#{$k} {@include text($v);}
+    .border-#{$k} {@include border($color: $v);}
 }
 
 // Generating padding and margn utility classes with all variants
@@ -75,6 +77,7 @@
 
     .border0 {border: none;}
     .border1 {@include border($thickness: $base-border-width);}
+    
 @for $i from 1 to 6 {
     .rounded#{$i} {@include rounded($val: $base-border-radius * math.div($i, 2));}
 }

@@ -1,0 +1,39 @@
+@use "sass:math";
+@import "../env/vars";
+
+@mixin input {
+    accent-color: $primary;
+    text-decoration: none;
+    font-size: $base-font-size;
+    background-color: $light;
+    color: $dark;
+    border: math.div($base-border-width, 2) solid $dark;
+    outline: 0 solid transparent;
+    border-radius: $base-border-radius;
+    padding: $base-p-y * 2  $base-p-x * 2;
+    cursor: text;
+    transition: outline .15s ease, background .15s ease;
+    margin: none;
+}
+input{@include input;}
+input:hover{@include input;filter: brightness(0.88);}
+input:focus{
+    @include input;
+    filter: brightness(0.93);
+    border: math.div($base-border-width, 2) solid mix($dark, $primary, 0.5);
+    outline: 0.25em solid rgba($primary, .2);
+}
+input[type=checkbox] {
+    outline: none !important;
+    visibility: none;
+    ::before{
+        content: "\2714";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: $base-p-y $base-p-y;
+        height: 1.5rem;
+        width: 1.5rem;
+        border: math.div($base-border-width, 2) solid mix($dark, $primary, 0.5);
+    }
+}
