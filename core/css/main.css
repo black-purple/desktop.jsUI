@@ -14,6 +14,12 @@
   box-sizing: border-box;
 }
 
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
 .btn-primary {
   position: relative;
   overflow: hidden;
@@ -38,12 +44,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-primary:hover {
@@ -71,12 +71,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-primary:focus {
@@ -106,12 +100,6 @@
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
 }
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
 
 .btn-secondary {
   position: relative;
@@ -137,12 +125,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-secondary:hover {
@@ -170,12 +152,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-secondary:focus {
@@ -205,12 +181,6 @@
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
 }
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
 
 .btn-light {
   position: relative;
@@ -236,12 +206,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-light:hover {
@@ -269,12 +233,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-light:focus {
@@ -304,12 +262,6 @@
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
 }
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
 
 .btn-dark {
   position: relative;
@@ -335,12 +287,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-dark:hover {
@@ -368,12 +314,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-dark:focus {
@@ -403,12 +343,6 @@
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
 }
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
 
 .btn-success {
   position: relative;
@@ -434,12 +368,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-success:hover {
@@ -467,12 +395,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-success:focus {
@@ -502,12 +424,6 @@
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
 }
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
 
 .btn-info {
   position: relative;
@@ -533,12 +449,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-info:hover {
@@ -566,12 +476,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-info:focus {
@@ -601,12 +505,6 @@
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
 }
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
 
 .btn-warning {
   position: relative;
@@ -632,12 +530,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-warning:hover {
@@ -665,12 +557,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-warning:focus {
@@ -700,12 +586,6 @@
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
 }
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
 
 .btn-error {
   position: relative;
@@ -731,12 +611,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-error:hover {
@@ -764,12 +638,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn-error:focus {
@@ -799,12 +667,6 @@
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
 }
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
 
 .btn {
   position: relative;
@@ -830,12 +692,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .btn:hover {
@@ -864,12 +720,6 @@
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
 }
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
 
 .btn:focus {
   position: relative;
@@ -897,12 +747,6 @@
   transform: scale(0);
   animation: ripple 600ms linear;
   background-color: rgba(255, 255, 255, 0.256);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 input {

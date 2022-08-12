@@ -26,13 +26,13 @@
         background-color: rgba(255, 255, 255, 0.256);
     }
 
-    @keyframes ripple {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
+    
+}
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
     }
-
 }
 
 @mixin btn-hover($bg: $dark, $color: $light) {
